@@ -1,24 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import SignIn from './components/SignIn/SignIn';
+import Main from './components/Main/Main';
+import { Routes, Route } from 'react-router-dom';
+import BookList from './components/BookList/BookList';
+import SpecificBook from './components/SpecificBook/SpecificBook';
+import booksData from "./data/books.json";
+import Cart from './components/Cart/Cart';
+import PageNotFound from './components/PageNotFound/PageNotFound';
+
+
+
 
 function App() {
+
+  const [isSigneddIn, setIsSigneddIn] = useState(false);
+
+  const handleSignIn = () => {
+    setIsSigneddIn(true);
+  };
+
+  const handleSignOut = () => {
+    setIsSigneddIn(false);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <Header />   
+      <Routes>
+        <Route path='/' element={isSigneddIn ? <Main /> : <SignIn />}></Route>
+        <Route path='/' element={<Main />}></Route>
+          <Route path='books' element={ <BookList bookListData={booksData.books} />}></Route>
+          <Route path='books/:id' element={<SpecificBook  />}></Route>
+        <Route path='/cart' element={<Cart />}></Route>
+         <Route path='/404' element={ <PageNotFound />}></Route>
+      </Routes>
+      <Footer /> 
     </div>
   );
 }

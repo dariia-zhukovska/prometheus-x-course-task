@@ -1,0 +1,102 @@
+
+
+.bookItem {
+  display: flex;
+  margin-top: 60px;
+  padding: 8px 25px;
+ 
+}
+
+.bookItemLeft {
+  margin-right: 40px;
+  height: 340px;
+  box-shadow: 1px 1px 20px rgba(20, 20, 20, 0.25);
+}
+
+.bookItemRight {
+
+}
+
+.bookItemRight, .bookItemInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+    width: 80%;
+}
+
+
+
+.bookItemTitle {
+  font-weight: 500;
+  font-size: 46px;
+  line-height: 70px;
+  color: #000000;
+}
+.bookItemAuthor {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: #797979;
+}
+
+.bookItemShortDescription, .bookItemDescription {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: #3A3A3C;
+  line-height: 20px;
+}
+
+.bookItemMore {
+  font-weight: 700;
+  font-size: 16px;
+  padding-left: 24px;
+  background-image: url('../../assets/svg/icon_vector_down.svg');
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 4px;
+  background-size: 12px;
+  margin-bottom: 16px;
+}
+
+
+.bookItemPriceLine {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+
+
+.bookItemPriceLine div:not(:last-child) {
+  margin-right: 52px;
+}
+
+.bookItemPrice {
+  font-weight: 700;
+    font-size: 24px;
+    line-height: 34px;
+  align-self: center;
+  color: #F3564F;
+}
+
+.bookItemTotalPrice {
+    color: #F45650;
+    font-weight: 600;
+      font-size: 23px;
+}
+
+.ButtonAddToCart {
+  padding: 12px 40px;
+    font-weight: 600;
+  font-size: 23px;
+  color: #fff;
+  border-radius: 8px;
+border-style: none;
+  background-color:  #F45650;
+}
+
+

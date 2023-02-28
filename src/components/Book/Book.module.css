@@ -1,0 +1,98 @@
+.bookItemDescription {
+  display: none;
+}
+
+.bookItemDescription .isActive {
+  display: block;
+}
+
+.bookItemShortDescription {
+  display: none;
+}
+
+.bookItemShortDescription .isActive {
+  display: block;
+}
+
+.bookItem {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  gap: 8px;
+  padding: 8px 40px 16px 40px;
+  box-shadow: 1px 1px 20px rgba(20, 20, 20, 0.25);
+  border-radius: 12px;
+  
+}
+
+.bookDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+
+
+.bookItemImage {
+  display: flex;
+  margin: 16px auto 10px auto;
+  height: 340px;
+
+  /* transition: all 0.3 ease; */
+  transition: all .2s ease-in-out;
+}
+
+.bookItemImage:hover {
+transform: scale(1.1) ;
+}
+
+.bookItemTitle {
+  color: black;
+  font-size: 24px;
+  font-weight: 500;
+  max-width: 360px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bookItemAuthor {
+  color: grey;
+  font-size: 20px;
+  max-width: 218px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bookItemPriceLine {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.bookItemPrice {
+  color: #F2403A;
+  font-size: 24px;
+  font-weight: 500;
+  align-self: center;
+}
+
+
+.bookItemButton {
+  padding: 12px 30px;
+  font-weight: 600;
+  font-size: 20px;
+  color: #F45650;
+  border-radius: 8px;
+  border: 2px solid #F45650 ;
+  background-color: transparent;
+
+}
+
+.bookItemButton:hover {
+  transform: scale(1.2)
+}
+

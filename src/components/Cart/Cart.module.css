@@ -1,0 +1,26 @@
+.shop_cart {
+  margin-top: 10em;
+}
+
+.empty_cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 40px;
+}
+
+.empty_cart {
+
+}
+
+.empty_cart__title {
+
+font-weight: 500;
+font-size: 40px;
+
+
+  color: #0E0E2C;
+}
+

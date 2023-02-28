@@ -1,0 +1,20 @@
+.footer__container {
+  background-color: #F45650;;
+ 
+  
+}
+
+
+.footer__name {
+  color: white;
+  font-family: "Barlow";
+    font-weight: 700;
+    font-size: 20px;
+ height: 64px;
+}
+
+
+a, a:visited {
+    color: white;
+text-decoration: none;
+}

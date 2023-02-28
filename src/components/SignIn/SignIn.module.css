@@ -1,0 +1,101 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  height: 72px;
+}
+
+input:focus-visible {
+  outline: none;
+}
+
+
+
+.content {
+  display: flex;
+  margin: 4vw auto;
+
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
+.bio_subtitle {
+  align-self: center;
+  margin: 0;
+  margin-bottom: 16px;
+  width: 320px;
+  height: 24px;
+  font-family: "Barlow";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: -0.24px;
+  color: #000000;
+}
+
+.avatar_new {
+  margin: 0;
+  margin-bottom: 16px;
+  max-width: 160px;
+  border: none;
+}
+
+
+
+.username__input {
+  margin: 0 auto 16px;
+  width: 200px;
+  height: 56px;
+  padding-left: 16px;
+  
+
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: -0.24px;
+  color: #9d9fa3;
+
+  border-radius: 8px;
+  border: transparent;
+
+  background-repeat: no-repeat;
+  background: rgba(201, 204, 209, 0.24);
+}
+
+
+/* Buttons */
+
+.button__sign_in {
+ width: 200px;
+  padding: 10px 44px;
+
+  /* margin: 0 auto; */
+
+
+  font-family: "Barlow";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400px;
+  line-height: 24px;
+  text-align: center;
+  color: #ffffff;
+
+  border-radius: 8px;
+  border: transparent;
+  background: #F45650;
+}
+
+
+
