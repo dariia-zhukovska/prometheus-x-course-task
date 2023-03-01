@@ -9,11 +9,21 @@ import styles from './Footer.module.css';
 export default function Footer() {
   
   return (
-     <footer className={styles.footer__container}>
-      <div className={styles.footer__name}>
-        Mede in <a href='https://prometheus.org.ua/' target="_blank" rel="noopener noreferrer" >Prometheus</a> © 2022
+    <footer data-testid="footer-component" className={styles.footerComponent}>
+      <div data-testid="footer-container" className={styles.footerContainer}>
+        <p data-testid="footer-name" className={styles.footerName}>
+          Made in{' '}
+          <a
+            data-testid="prometheus-link"
+            target="_blank"
+            rel="noreferrer"
+            href="https://prometheus.org.ua/"
+          >
+            Prometheus
+          </a>{' '}
+          © 2022
+        </p>
       </div>
-    
     </footer>
   );
 }

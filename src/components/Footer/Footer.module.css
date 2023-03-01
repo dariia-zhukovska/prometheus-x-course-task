@@ -1,20 +1,31 @@
-.footer__container {
-  background-color: #F45650;;
- 
+.footerComponent{
   
+
+  background-color: #F45650;
+  height: 64px;
+    z-index: 1;
+
+
 }
 
 
-.footer__name {
+.footerContainer {
+  display: flex;
+align-self: center;
+  align-items: center;
+    justify-content: center; 
+}
+
+.footerName {
   color: white;
   font-family: "Barlow";
-    font-weight: 700;
-    font-size: 20px;
- height: 64px;
+  font-weight: 700;
+  font-size: 20px;
+
 }
 
 
-a, a:visited {
-    color: white;
-text-decoration: none;
+.footerName a {
+  color: white;
+  text-decoration: none;
 }

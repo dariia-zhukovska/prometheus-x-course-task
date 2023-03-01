@@ -28,16 +28,17 @@ function App() {
 
   return (
     <div className="App">
-       <Header />   
+      <Header />   
       <Routes>
         <Route path='/' element={isSigneddIn ? <Main /> : <SignIn />}></Route>
-        <Route path='/' element={<Main />}></Route>
-          <Route path='books' element={ <BookList bookListData={booksData.books} />}></Route>
+        <Route path='/' element={<Main />}> </Route>
+          <Route path='books' element={ <BookList bookListData={booksData.books} defaultOption={'Price'} />}></Route>
           <Route path='books/:id' element={<SpecificBook  />}></Route>
         <Route path='/cart' element={<Cart />}></Route>
-         <Route path='/404' element={ <PageNotFound />}></Route>
+          <Route path='/404' element={<PageNotFound />}></Route>
+          
       </Routes>
-      <Footer /> 
+      <Footer />
     </div>
   );
 }

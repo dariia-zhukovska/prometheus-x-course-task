@@ -3,21 +3,18 @@ import Book from '../Book/Book';
 import BookList from '../BookList/BookList';
 import styles from './Main.module.css';
 import booksData from '../../data/books.json'
-import SearchNav from '../SearchNav/SearchNav';
-
-
 
 
 
 
 
 export default function Main() {
-  
+     const menuOptions = ['All', '0-15', '15-30', '30+']; 
   return (
     <div>
       <main className={styles.booklist__container}>
-        <SearchNav />
-         <BookList bookListData={booksData.books} />
+
+         <BookList bookListData={booksData.books} defaultOption={'Price'}  />
        </main>
      
      
