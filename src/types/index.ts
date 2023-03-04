@@ -9,5 +9,17 @@ export interface IBookListData {
 }
 
 
+export interface ICartBookData {
+  id: number;
+  image: string;
+  title: string;
+  author: string;
+  price: number;
+  count: number;
+};
+
+
+
+
 
 

@@ -1,25 +1,17 @@
-import React from 'react';
-import Book from '../Book/Book';
-import BookList from '../BookList/BookList';
-import styles from './Main.module.css';
-import booksData from '../../data/books.json'
-
-
-
-
+import React from "react";
+import Book from "../Book/Book";
+import BookList from "../BookList/BookList";
+import styles from "./Main.module.css";
+import booksData from "../../data/books.json";
+import SignIn from "../SignIn/SignIn";
 
 export default function Main() {
-     const menuOptions = ['All', '0-15', '15-30', '30+']; 
   return (
     <div>
-      <main className={styles.booklist__container}>
-
-         <BookList bookListData={booksData.books} defaultOption={'Price'}  />
-       </main>
-     
-     
-   </div>
+      <SignIn />
+      {/* <main className={styles.booklistContainer}>
+        <BookList bookListData={booksData.books} />
+      </main> */}
+    </div>
   );
 }
-
-

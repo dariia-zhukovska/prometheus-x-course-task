@@ -1,0 +1,18 @@
+.menuNavigation {
+  display: flex;
+  gap: 10%;
+  margin-top: 20px;
+margin-left: 40px;
+width: 40px;
+height: 40px;
+}
+
+
+
+.backBtn {
+background-image: url(./../../assets/svg/icon_back.svg);
+background-repeat: no-repeat;
+background-color: white;
+border: none;
+cursor: pointer;
+}

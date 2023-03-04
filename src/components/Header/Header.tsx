@@ -1,34 +1,61 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styles from './Header.module.css';
-import icon_cart from '../../assets/svg/icon_cart.svg'
-import userLogo from '../../assets/svg/icon_account.svg'
+import { Link, useNavigate } from "react-router-dom";
+import styles from "./Header.module.css";
+import icon_cart from "../../assets/svg/icon_cart.svg";
+import userLogo from "../../assets/svg/icon_account.svg";
 
+interface IProps {
+  cartCount: number;
+}
 
+export default function Header({ cartCount }: IProps) {
+  const navigate = useNavigate();
+  const username = localStorage.getItem("username");
+  const handleSignOutClick = () => {
+    localStorage.removeItem("username");
+    navigate("/");
+  };
 
-
-
-
-export default function Header() {
-  
   return (
-    <header className={styles.header__container}>
-      <div className={styles.header__name}>
-        <a href='/'>JS BAND STORE</a>
-        <span>   |  </span>
-        <div>Dariia Zhukovska</div>
+    <header className={styles.headerContainer}>
+      <div className={styles.headerName}>
+        <a href="/books">JS BAND STORE</a>
+        <span> | </span>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.linkedin.com/in/dariia-zhukovska/"
+        >
+          Dariia Zhukovska
+        </a>
       </div>
-      <div className={styles.header__user_navigation}>
-        <div  className={styles.header__cart}><Link to='/cart'>
-          <img className={styles.header__cart_icon} src={icon_cart} alt='spopping_cart' />
-          <span className={styles.header__cart_bage}>0</span>
-        </Link></div>
-       
-       
-        <button className={styles.button__sign_out}>Sign out</button>
-        <div className={styles.header__username}><img src={userLogo} alt="user_icon" /></div>
+      <div className={styles.userNavigation}>
+        {username ? (
+          <>
+            <div className={styles.headerCart}>
+              <Link to="/cart">
+                <img
+                  className={styles.cartIcon}
+                  src={icon_cart}
+                  alt="spopping_cart"
+                />
+                <span className={styles.cartBage}>{cartCount}</span>
+              </Link>
+            </div>
+            <button
+              className={styles.buttonSignOut}
+              onClick={handleSignOutClick}
+            >
+              Sign out
+            </button>
+            <div className={styles.headerUsername}>
+              <img src={userLogo} alt="user_icon" />
+            </div>
+            <span>{username}</span>
+          </>
+        ) : (
+          <div></div>
+        )}
       </div>
-      
     </header>
   );
 }

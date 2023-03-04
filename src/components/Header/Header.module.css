@@ -1,14 +1,12 @@
-
-
-.header__container {
- display: flex;
- justify-content: space-between;
- align-items: center;
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 16px 16px;
   background-color: rgb(255, 251, 254);
 }
 
-.header__name {
+.headerName {
   display: flex;
   gap: 10px;
   font-family: "Barlow";
@@ -22,16 +20,17 @@
   background-position-y: center;
 }
 
-.header__name a {
+.headerName a {
   color: inherit;
 }
 
-.header__name span, div {
+.headerName span,
+div {
   font-weight: 400;
 }
 
 
-.header__user_navigation {
+.userNavigation {
   display: flex;
   justify-content: end;
   align-items: center;
@@ -39,23 +38,23 @@
 }
 
 
-.header__cart {
+.headerCart {
   position: relative;
 }
 
-.header__cart_bage {
+.cartBage {
   position: absolute;
-    top: -6px;
-    right: -10px;
-    color: white;
-    background-color: #F45650;
-    border-radius: 50%;
-    align-self: center;
-    padding: 1px 6px 3px 6px;
-    font-size: 10px;
+  top: -6px;
+  right: -10px;
+  color: white;
+  background-color: #F45650;
+  border-radius: 50%;
+  align-self: center;
+  padding: 1px 6px 3px 6px;
+  font-size: 10px;
 }
 
-.button__sign_out{
+.buttonSignOut {
   padding: 10px 20px;
   font-size: 16px;
   font-weight: 600px;
@@ -66,6 +65,11 @@
   border-radius: 8px;
   border: transparent;
   background: #F45650;
+  transition: all .2s ease-in-out;
+}
+
+.buttonSignOut:hover {
+  transform: scale(1.1);
 }
 
 
