@@ -10,17 +10,28 @@ import SpecificBook from "./components/SpecificBook/SpecificBook";
 import booksData from "./data/books.json";
 import Cart from "./components/Cart/Cart";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
+import { AuthProvider } from "./providers/AuthProvider";
 
 function App() {
   const [cartCount, setCartCount] = useState(0);
-  const [isSigneddIn, setIsSigneddIn] = useState(false);
+  const [isSignedIn, setIsSignedIn] = useState(
+    Boolean(localStorage.getItem("username"))
+  );
+
+  const PrivateRoute = ({ element, ...rest }: any) => {
+    return isSignedIn ? (
+      <Route {...rest} element={element} />
+    ) : (
+      <Navigate to="/" replace />
+    );
+  };
 
   const handleSignIn = () => {
-    setIsSigneddIn(true);
+    setIsSignedIn(true);
   };
 
   const handleSignOut = () => {
-    setIsSigneddIn(false);
+    setIsSignedIn(false);
   };
 
   const handleAddToCart = () => {
@@ -44,25 +55,28 @@ function App() {
       <Header cartCount={cartCount} />
       <div className="mainContainer">
         <Routes>
-          <Route path="/" element={isSigneddIn ? <Main /> : <SignIn />}></Route>
+          <Route path="/" element={isSignedIn ? <Main /> : <SignIn />}></Route>
           <Route path="/" element={<Main />}>
             {" "}
           </Route>
-          <Route path="books" element={<BookList />}></Route>
+
+          <Route path="book-list" element={<AuthProvider><BookList /></AuthProvider>}></Route>
           <Route
-            path="books/:id"
-            element={<SpecificBook handleCartCount={handleAddToCart} />}
+            path="book-list/:id"
+            element={<AuthProvider><SpecificBook handleCartCount={handleAddToCart} /></AuthProvider>}
           ></Route>
           <Route
             path="/cart"
             element={
+              <AuthProvider>
               <Cart
                 handleClearCart={handleClearCart}
                 handleRemoveFromCart={handleRemoveFromCart}
               />
+              </AuthProvider>
             }
           ></Route>
-          <Route path="/404" element={<PageNotFound />}></Route>
+          <Route path="*" element={<PageNotFound />}></Route>
         </Routes>
       </div>
       <Footer />

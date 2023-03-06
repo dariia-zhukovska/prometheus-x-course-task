@@ -18,6 +18,14 @@ export interface ICartBookData {
   count: number;
 };
 
+export interface IAuthContext {
+  username: string | null;
+  logIn: (username: string) => void;
+  logOut: () => void;
+}
+
+
+
 
 
 

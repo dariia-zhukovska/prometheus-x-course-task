@@ -72,6 +72,16 @@ div {
   transform: scale(1.1);
 }
 
+.headerUsername {
+  display: flex;
+
+  gap: 10px
+}
+
+.headerUsername div {
+  font-size: 20px;
+  color: #F45650;
+}
 
 /* .header__username {
   background-image: url('../../assets/svg/icon_account.svg');

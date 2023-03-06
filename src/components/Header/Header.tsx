@@ -2,23 +2,27 @@ import { Link, useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 import icon_cart from "../../assets/svg/icon_cart.svg";
 import userLogo from "../../assets/svg/icon_account.svg";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 interface IProps {
   cartCount: number;
 }
 
 export default function Header({ cartCount }: IProps) {
+  // @ts-ignore
+  const { username, logOut } = useContext(AuthContext);
+
   const navigate = useNavigate();
-  const username = localStorage.getItem("username");
+
   const handleSignOutClick = () => {
-    localStorage.removeItem("username");
-    navigate("/");
+    logOut();
   };
 
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headerName}>
-        <a href="/books">JS BAND STORE</a>
+        <a href="/book-list">JS BAND STORE</a>
         <span> | </span>
         <a
           target="_blank"
@@ -49,8 +53,8 @@ export default function Header({ cartCount }: IProps) {
             </button>
             <div className={styles.headerUsername}>
               <img src={userLogo} alt="user_icon" />
+              <div className={""}>{username}</div>
             </div>
-            <span>{username}</span>
           </>
         ) : (
           <div></div>

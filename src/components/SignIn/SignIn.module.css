@@ -63,7 +63,7 @@ input:focus-visible {
   font-size: 15px;
   line-height: 24px;
   letter-spacing: -0.24px;
-  color: #9d9fa3;
+  color: #000000;
 
   border-radius: 8px;
   border: transparent;
@@ -95,4 +95,10 @@ input:focus-visible {
 
 .buttonSignIn:hover {
   transform: scale(1.1);
+}
+
+.buttonSignIn[disabled] {
+  background-color: #d3d3d3;
+  color: #808080;
+  cursor: not-allowed;
 }
