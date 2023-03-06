@@ -14,9 +14,7 @@ jest.mock("react-router-dom", () => ({
 describe("testing decrease handler function", () => {
   test("should not call onCountChange, when count <= 1", async () => {
     const CountChangeMock = jest.fn();
-    const { container } = render(
-      <SpecificBook handleCartCount={CountChangeMock} />
-    );
+    const { container } = render(<SpecificBook />);
     const decreaseButton = await screen.findByTestId("counter-decrease");
     expect(decreaseButton).toBeInTheDocument();
     const increaseButton = await screen.findByTestId("counter-increase");

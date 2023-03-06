@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import { IBookListData } from "../../types";
+import { IBookListData, ICartBookData } from "../../types";
 import styles from "./SpecificBook.module.css";
 import imageNotFound from "../../assets/img/imageNotFound.png";
 import { Link, useParams } from "react-router-dom";
@@ -10,20 +10,29 @@ import vectorUp from "../../assets/svg/icon_vector_up.svg";
 import vectorDown from "../../assets/svg/icon_vector_down.svg";
 import NavMenu from "../NavMenu/NavMenu";
 import toast, { Toaster } from "react-hot-toast";
+import useCart from "../../hooks/useCart";
 
-interface IProps {
-  handleCartCount: () => void;
-}
-
-export default function SpecificBook({ handleCartCount }: IProps) {
+export default function SpecificBook() {
   const dataBooks = booksData.books;
   const [isExpanded, setIsExpanded] = useState(true);
   const [countValue, setCountValue] = useState(1);
   const [totalPrice, setTotalPrice] = useState(1);
+  const { cartItems, setCartItems } = useCart();
+  console.log("BOOK", cartItems);
 
   const { id } = useParams();
 
-  const selectedBook = dataBooks.find((book) => book.id === parseInt(`${id}`));
+  let selectedBook =
+    dataBooks.find((book) => book.id === parseInt(`${id}`)) ||
+    ({} as IBookListData);
+
+  useEffect(() => {
+    const currentItem = cartItems.find((book) => book.id === parseInt(`${id}`));
+    if (currentItem) {
+      setCountValue(currentItem.count);
+      setTotalPrice(currentItem.totalPrice);
+    }
+  }, [cartItems, id]);
 
   useEffect(() => {
     const newTotalPrice = countValue * (selectedBook?.price || 0);
@@ -34,29 +43,28 @@ export default function SpecificBook({ handleCartCount }: IProps) {
     setIsExpanded(!isExpanded);
   };
 
-  const handleCountChange = (count: number) => {
-    setCountValue(count);
-  };
-
   if (!selectedBook) {
     return <PageNotFound />;
   }
 
   const handleAddToCart = () => {
-    const username = localStorage.getItem("username");
-    const cartItems = JSON.parse(
-      localStorage.getItem(`cartItems${username}`) ?? "[]"
-    );
     const selectedCartItemIndex = cartItems.findIndex(
       (item: IBookListData) => item.id === selectedBook.id
     );
+
     if (selectedCartItemIndex !== -1) {
-      const selectedCartItem = cartItems[selectedCartItemIndex];
-      selectedCartItem.count += countValue;
-      selectedCartItem.totalPrice += totalPrice;
-      toast.error("Item has been already added to the cart");
+      const selectedCartItem = { ...cartItems[selectedCartItemIndex] };
+      selectedCartItem.count = countValue;
+      selectedCartItem.totalPrice = totalPrice;
+      console.log(selectedCartItem);
+
+      const newItems = cartItems.map((item) => {
+        return +item.id === +selectedBook.id ? selectedCartItem : item;
+      });
+      setCartItems(newItems);
+      toast.success("Cart has been updated successfully!");
     } else {
-      cartItems.push({
+      const newItem = {
         id: selectedBook.id,
         image: selectedBook.image,
         title: selectedBook.title,
@@ -64,12 +72,10 @@ export default function SpecificBook({ handleCartCount }: IProps) {
         price: selectedBook.price,
         count: countValue,
         totalPrice: totalPrice,
-      });
+      };
       toast.success("Item added to the cart");
-      handleCartCount();
+      setCartItems([...cartItems, newItem]);
     }
-
-    localStorage.setItem(`cartItems${username}`, JSON.stringify(cartItems));
   };
 
   return (
@@ -104,21 +110,26 @@ export default function SpecificBook({ handleCartCount }: IProps) {
             </div>
           </div>
           <div className={styles.bookItemPriceLine}>
-            <div className={styles.bookItemPrice}>
-              {`${selectedBook.price.toFixed(2)} $`}
+            <div>
+              <div className={styles.bookItemPrice}>
+                {`${selectedBook.price.toFixed(2)} $`}
+              </div>
+              <div className={styles.bookItemCount}>
+                {<Counter count={countValue} setCount={setCountValue} />}
+              </div>
             </div>
-            <div className={styles.bookItemCount}>
-              {<Counter initialValue={1} onCountChange={handleCountChange} />}
+            <div>
+              {" "}
+              <div className={styles.bookItemTotalPrice}>
+                {` Total Price: ${totalPrice.toFixed(2)}  $`}
+              </div>
+              <button
+                className={styles.ButtonAddToCart}
+                onClick={handleAddToCart}
+              >
+                Add To Cart
+              </button>
             </div>
-            <div className={styles.bookItemTotalPrice}>
-              {` Total Price: ${totalPrice.toFixed(2)}  $`}
-            </div>
-            <button
-              className={styles.ButtonAddToCart}
-              onClick={handleAddToCart}
-            >
-              Add To Cart
-            </button>
           </div>
         </div>
       </div>

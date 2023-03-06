@@ -6,6 +6,8 @@ import booksData from "../../data/books.json";
 import SignIn from "../SignIn/SignIn";
 
 export default function Main() {
+  console.log("AAAA Main");
+
   return (
     <div>
       <SignIn />

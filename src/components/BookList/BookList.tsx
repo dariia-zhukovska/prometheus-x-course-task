@@ -9,11 +9,7 @@ import FilterNavbar from "../FilterNavbar/FilterNavbar";
 
 export default function BookList() {
   const [filteredBooks, setFilteredBooks] = useState<IBookListData[]>([]);
-  const username = localStorage.getItem("username");
 
-  if (!username) {
-    // return <Navigate to="/" />;
-  }
   return (
     <div>
       <FilterNavbar

@@ -10,21 +10,35 @@ import SpecificBook from "./components/SpecificBook/SpecificBook";
 import booksData from "./data/books.json";
 import Cart from "./components/Cart/Cart";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
-import { AuthProvider } from "./providers/AuthProvider";
+import { PrivateRoute } from "./providers/PrivateRoute";
 
-function App() {
+const App = () => {
   const [cartCount, setCartCount] = useState(0);
   const [isSignedIn, setIsSignedIn] = useState(
     Boolean(localStorage.getItem("username"))
   );
+  const username = localStorage.getItem("username");
 
-  const PrivateRoute = ({ element, ...rest }: any) => {
-    return isSignedIn ? (
-      <Route {...rest} element={element} />
-    ) : (
-      <Navigate to="/" replace />
-    );
-  };
+  useEffect(() => {
+    console.log(username);
+
+    const cartData = localStorage.getItem(`cartItems${username}`) || "";
+    console.log(cartData);
+
+    if (cartData) {
+      const items = JSON.parse(cartData);
+      setCartCount(items.length);
+      console.log(items);
+    }
+  }, [username]);
+
+  // const PrivateRoute = ({ element, ...rest }: any) => {
+  //   return isSignedIn ? (
+  //     <Route {...rest} element={element} />
+  //   ) : (
+  //     <Navigate to="/" replace />
+  //   );
+  // };
 
   const handleSignIn = () => {
     setIsSignedIn(true);
@@ -34,46 +48,38 @@ function App() {
     setIsSignedIn(false);
   };
 
-  const handleAddToCart = () => {
-    setCartCount(cartCount + 1);
-  };
-
-  const handleRemoveFromCart = () => {
-    setCartCount(cartCount - 1);
-  };
-
-  const handleClearCart = () => {
-    // const username = localStorage.getItem("username");
-    // const user = localStorage.getItem(`cartItems${username}`);
-    // if (user?.length === 0) {
-    //   setCartCount(0);
-    // }
-    setCartCount(0);
-  };
   return (
     <div className="App">
-      <Header cartCount={cartCount} />
+      <Header />
       <div className="mainContainer">
         <Routes>
-          <Route path="/" element={isSignedIn ? <Main /> : <SignIn />}></Route>
+          {/* <Route path="/" element={isSignedIn ? <Main /> : <SignIn />}></Route> */}
           <Route path="/" element={<Main />}>
             {" "}
           </Route>
 
-          <Route path="book-list" element={<AuthProvider><BookList /></AuthProvider>}></Route>
+          <Route
+            path="book-list"
+            element={
+              <PrivateRoute>
+                <BookList />
+              </PrivateRoute>
+            }
+          ></Route>
           <Route
             path="book-list/:id"
-            element={<AuthProvider><SpecificBook handleCartCount={handleAddToCart} /></AuthProvider>}
+            element={
+              <PrivateRoute>
+                <SpecificBook />
+              </PrivateRoute>
+            }
           ></Route>
           <Route
             path="/cart"
             element={
-              <AuthProvider>
-              <Cart
-                handleClearCart={handleClearCart}
-                handleRemoveFromCart={handleRemoveFromCart}
-              />
-              </AuthProvider>
+              <PrivateRoute>
+                <Cart />
+              </PrivateRoute>
             }
           ></Route>
           <Route path="*" element={<PageNotFound />}></Route>
@@ -82,6 +88,6 @@ function App() {
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

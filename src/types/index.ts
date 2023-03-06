@@ -4,8 +4,8 @@ export interface IBookListData {
   price: number;
   image: string;
   title: string;
-  shortDescription: string;
-  description: string;
+  shortDescription?: string;
+  description?: string;
 }
 
 
@@ -16,12 +16,14 @@ export interface ICartBookData {
   author: string;
   price: number;
   count: number;
+  totalPrice: number;
 };
 
-export interface IAuthContext {
+export interface ICartContext {
+  cartItems: ICartBookData[];
+  setCartItems: (items: ICartBookData[]) => void;
   username: string | null;
-  logIn: (username: string) => void;
-  logOut: () => void;
+  setUsername: (name: string | null) => void;
 }
 
 

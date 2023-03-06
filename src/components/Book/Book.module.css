@@ -58,7 +58,7 @@ transform: scale(1.1) ;
 
 
 .bookItemAuthor {
-  color: grey;
+  color: #808080;
   font-size: 20px;
   max-width: 218px;
   overflow: hidden;
@@ -97,3 +97,8 @@ transform: scale(1.1) ;
   transform: scale(1.2)
 }
 
+@media (max-width: 767px) {
+  .bookItem {
+   
+  }
+}

@@ -11,7 +11,7 @@
   box-shadow: 1px 1px 20px rgba(20, 20, 20, 0.25);
 }
 
-.bookItemRight {}
+
 
 .bookItemRight,
 .bookItemInfo {
@@ -69,6 +69,9 @@
   width: 80%;
 }
 
+ .bookItemPriceLine div {
+   display: flex;
+ }
 
 .bookItemPriceLine div:not(:last-child) {
   margin-right: 52px;
@@ -85,13 +88,14 @@
 .bookItemTotalPrice {
   color: #F45650;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 22px;
+  align-self: center;
 }
 
 .ButtonAddToCart {
   padding: 12px 40px;
   font-weight: 600;
-  font-size: 23px;
+  font-size: 20px;
   color: #fff;
   border-radius: 8px;
   border-style: none;
@@ -102,3 +106,55 @@
 .ButtonAddToCart:hover {
   transform: scale(1.1);
 }
+
+@media (max-width: 1023px) {
+  .bookItemPriceLine {
+    display: flex;
+    flex-direction: column;
+  }
+
+    .bookItemPriceLine div {
+      margin-right: 0;
+      justify-content: space-between;
+    }
+}
+
+
+@media (max-width: 767px) {
+  .bookItem {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bookItemLeft {
+    align-self: center;
+    margin-bottom: 16px;
+    margin-right: 0;
+  }
+.bookItemRight {
+  align-self: center;
+  align-items: center;
+  width: 100%;
+}
+
+
+.bookItemTitle {
+  font-size: 30px;
+  line-height: normal;
+}
+  .bookItemPriceLine {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+   .bookItemPriceLine div:last-child {
+  margin-right: 0;
+  display: block;
+  }
+
+  .ButtonAddToCart {
+    margin-top: 16px;
+  }
+}
+ 

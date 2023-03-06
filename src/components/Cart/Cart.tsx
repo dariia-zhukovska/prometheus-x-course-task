@@ -6,42 +6,21 @@ import { IBookListData, ICartBookData } from "../../types";
 import Counter from "../Counter/Counter";
 import NavMenu from "../NavMenu/NavMenu";
 import toast, { Toaster } from "react-hot-toast";
+import useCart from "../../hooks/useCart";
 
-interface IProps {
-  handleClearCart: () => void;
-  handleRemoveFromCart: () => void;
-}
-
-export default function Cart({
-  handleClearCart,
-  handleRemoveFromCart,
-}: IProps) {
-  const [cartItems, setCartItems] = useState<ICartBookData[]>([]);
-
-  const username = localStorage.getItem("username");
-  useEffect(() => {
-    const cartData = localStorage.getItem(`cartItems${username}`);
-    if (cartData) {
-      setCartItems(JSON.parse(cartData));
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem(`cartItems${username}`, JSON.stringify(cartItems));
-  }, [cartItems]);
+export default function Cart() {
+  const { cartItems, setCartItems } = useCart();
 
   const handleDeleteItem = (itemId: number) => {
     const newCartItems = cartItems.filter((item) => item.id !== itemId);
     setCartItems(newCartItems);
-    handleRemoveFromCart();
   };
 
   const handleCountChange = (itemId: number, count: number) => {
-    setCartItems((prevCartItems) =>
-      prevCartItems.map((item) =>
-        item.id === itemId ? { ...item, count } : item
-      )
+    const items = cartItems.map((item) =>
+      item.id === itemId ? { ...item, count } : item
     );
+    setCartItems(items);
   };
 
   const cartTotalPrice = cartItems.reduce(
@@ -51,9 +30,7 @@ export default function Cart({
 
   const handlePurchase = () => {
     setCartItems([]);
-    localStorage.removeItem(`cartItems${username}`);
     toast.success("Thank you for purchasing!");
-    handleClearCart();
   };
 
   return (
@@ -72,30 +49,33 @@ export default function Cart({
                       alt="book_image"
                       className={styles.cartItemImage}
                     />
-                    <div>
-                      <div className={styles.bookItemTitle}>{item.title}</div>
-                      <div className={styles.bookItemAuthor}>{item.author}</div>
-                      <div className={styles.bookItemPrice}>
-                        {item.price.toFixed(2)} $
+                    <div className={styles.cartItemDescription}>
+                      <div className={styles.cartItemData}>
+                        <div className={styles.bookItemTitle}>{item.title}</div>
+                        <div className={styles.bookItemAuthor}>
+                          {item.author}
+                        </div>
+                        <div className={styles.bookItemPrice}>
+                          {item.price.toFixed(2)} $
+                        </div>
                       </div>
-                    </div>
-                  </div>
+                      <div className={styles.priceContainer}>
+                        <div className={styles.counter}>
+                          <Counter
+                            count={item.count}
+                            setCount={(count) =>
+                              handleCountChange(item.id, count)
+                            }
+                          />
+                          <button
+                            className={styles.cartItemDeleteButton}
+                            onClick={() => handleDeleteItem(item.id)}
+                          ></button>
 
-                  <div className={styles.priceContainer}>
-                    <div className={styles.counter}>
-                      <Counter
-                        initialValue={1}
-                        onCountChange={(count) =>
-                          handleCountChange(item.id, count)
-                        }
-                      />
-                      <button
-                        className={styles.cartItemDeleteButton}
-                        onClick={() => handleDeleteItem(item.id)}
-                      ></button>
-
-                      <div className={styles.bookItemTotalPrice}>
-                        {(item.price * item.count).toFixed(2)} $
+                          <div className={styles.bookItemTotalPrice}>
+                            {(item.price * item.count).toFixed(2)} $
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

@@ -1,27 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Counter.module.css";
 
 interface IProps {
-  initialValue: number;
-  onCountChange: (count: number) => void;
+  count: number;
+  setCount: (count: number) => void;
 }
 
-export default function Counter({ initialValue, onCountChange }: IProps) {
-  const [count, setCount] = useState(initialValue);
-
+export default function Counter({ count, setCount }: IProps) {
   const handleIncrease = () => {
     if (count < 42) {
       setCount(count + 1);
-      onCountChange(count + 1);
     }
   };
 
   const handleDecrease = () => {
-    console.log("AAAAAA", count);
-
     if (count > 1) {
       setCount(count - 1);
-      onCountChange(count - 1);
     }
   };
 
@@ -29,7 +23,6 @@ export default function Counter({ initialValue, onCountChange }: IProps) {
     const value = parseInt(event.target.value, 10);
     if (!isNaN(value) && value >= 1 && value <= 42) {
       setCount(value);
-      onCountChange(value);
     }
   };
 

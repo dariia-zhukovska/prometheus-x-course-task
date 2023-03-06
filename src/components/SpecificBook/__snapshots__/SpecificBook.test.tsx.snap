@@ -51,47 +51,52 @@ exports[`testing decrease handler function should not call onCountChange, when c
       <div
         class="bookItemPriceLine"
       >
-        <div
-          class="bookItemPrice"
-        >
-          10.99 $
-        </div>
-        <div
-          class="bookItemCount"
-        >
+        <div>
           <div
-            class="counter"
+            class="bookItemPrice"
           >
-            <button
-              data-testid="counter-decrease"
-              style="color: grey;"
+            10.99 $
+          </div>
+          <div
+            class="bookItemCount"
+          >
+            <div
+              class="counter"
             >
-              -
-            </button>
-            <input
-              data-testid="counter-value"
-              max="42"
-              min="1"
-              type="number"
-              value="1"
-            />
-            <button
-              data-testid="counter-increase"
-            >
-              +
-            </button>
+              <button
+                data-testid="counter-decrease"
+                style="color: grey;"
+              >
+                -
+              </button>
+              <input
+                data-testid="counter-value"
+                max="42"
+                min="1"
+                type="number"
+                value="1"
+              />
+              <button
+                data-testid="counter-increase"
+              >
+                +
+              </button>
+            </div>
           </div>
         </div>
-        <div
-          class="bookItemTotalPrice"
-        >
-           Total Price: 10.99  $
+        <div>
+           
+          <div
+            class="bookItemTotalPrice"
+          >
+             Total Price: 10.99  $
+          </div>
+          <button
+            class="ButtonAddToCart"
+          >
+            Add To Cart
+          </button>
         </div>
-        <button
-          class="ButtonAddToCart"
-        >
-          Add To Cart
-        </button>
       </div>
     </div>
   </div>

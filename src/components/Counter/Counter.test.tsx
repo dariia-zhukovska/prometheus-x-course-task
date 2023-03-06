@@ -6,7 +6,7 @@ import Counter from "./Counter";
 describe("testing decrease handler function", () => {
   test("should not call onCountChange, when count <= 1", async () => {
     const CountChangeMock = jest.fn();
-    render(<Counter initialValue={1} onCountChange={CountChangeMock} />);
+    render(<Counter count={1} setCount={CountChangeMock} />);
     const decreaseButton = await screen.findByTestId("counter-decrease");
     expect(decreaseButton).toBeInTheDocument();
 
@@ -16,7 +16,7 @@ describe("testing decrease handler function", () => {
 
   test("should call onCountChange, when count > 1", async () => {
     const CountChangeMock = jest.fn();
-    render(<Counter initialValue={2} onCountChange={CountChangeMock} />);
+    render(<Counter count={2} setCount={CountChangeMock} />);
     const decreaseButton = await screen.findByTestId("counter-decrease");
     expect(decreaseButton).toBeInTheDocument();
     const increaseButton = await screen.findByTestId("counter-increase");

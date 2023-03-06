@@ -2,26 +2,23 @@ import React, { useContext, useState } from "react";
 import styles from "./SignIn.module.css";
 import avatar from "../../assets/img/avatar.png";
 import { useNavigate, Routes, Route, Navigate } from "react-router-dom";
-import { useAuth } from "../../hooks/useAuth";
-import { AuthContext } from "../../providers/AuthProvider";
+import useCart from "../../hooks/useCart";
 
 export default function SignIn() {
   const navigate = useNavigate();
-  const [username, setUsername] = useState("");
-  // @ts-ignore
-  const { logIn } = useContext(AuthContext);
+  const [usernameValue, setUsernameValue] = useState("");
+  const { setUsername } = useCart();
 
   const handleUsernameChange = ({ target: { value } }: any) => {
     const newUsername = value;
-    setUsername(newUsername);
+    setUsernameValue(newUsername);
   };
 
   const handleSignInClick = () => {
-    // localStorage.setItem("username", username);
-    // getUserName(username);
-    // signIn(username, () => navigate("/book-list", { replace: true }));
-    // navigate("/book-list");
-    logIn(username);
+    // localStorage.setItem("username", usernameValue);
+    setUsername(usernameValue);
+
+    navigate("/book-list");
   };
 
   return (
@@ -32,13 +29,13 @@ export default function SignIn() {
         type="name"
         className={styles.usernameInput}
         placeholder="Type username"
-        value={username}
+        value={usernameValue}
         onChange={handleUsernameChange}
       />
       <button
         className={styles.buttonSignIn}
         onClick={handleSignInClick}
-        disabled={!/^[A-Za-z][A-Za-z0-9_]{3,15}$/.test(username)}
+        disabled={!/^[A-Za-z][A-Za-z0-9_]{3,15}$/.test(usernameValue)}
       >
         Sign in
       </button>

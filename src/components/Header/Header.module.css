@@ -89,3 +89,11 @@ div {
   background-position-x: start;
   background-position-y: center;
 } */
+
+@media (max-width: 767px) {
+  .headerContainer {
+    flex-direction: column;
+    height: 120px;
+    gap: 16%;
+  }
+}
