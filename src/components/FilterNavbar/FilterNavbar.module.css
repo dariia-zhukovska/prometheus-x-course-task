@@ -10,7 +10,6 @@
 }
 
 .search {
-  /* position: absolute; */
   width: 24px;
   height: 24px;
   left: 10px;
@@ -18,29 +17,26 @@
   background-image: url("../../assets/svg/search.svg");
   background-repeat: no-repeat;
   border: none;
-  /* background-color: white; */
-  /* align-self: center; */
 }
 
 .inputBox {
-  max-width: 350px;
   position: relative;
+  max-width: 350px;
 }
 
 .inputBox input {
   position: relative;
+  margin: 8px auto;
+  padding: 10px 24px;
   font-size: 16px;
   font-weight: 400;
   color: #9d9fa3;
   border: none;
-  outline: none;
-  margin: 8px auto;
-  padding: 10px 24px;
   border-radius: 8px;
   border: transparent;
-
   background-repeat: no-repeat;
   background: white;
+  outline: none;
 }
 
 .inputBox input::placeholder {
@@ -59,17 +55,9 @@
   background-image: url("../../assets/svg/search.svg");
 }
 
-/* Price Filter */
-
 .select_container {
-  /* position: relative; */
   display: inline-block;
   margin: 10px;
-  /*font-size: 16px;
-  background-color: white;
-  */
-  /*background: #FFFFFF;
-  */
   font-family: "Barlow";
   font-weight: 400;
   border-radius: 12px;
@@ -80,7 +68,6 @@
   color: #878787;
   font-size: 16px;
   appearance: none;
-  -webkit-appearance: none;
 }
 
 .select-menu select:focus {
@@ -89,19 +76,20 @@
 
 .select-container {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 select {
+  padding: 10px 30px;
   font-size: 16px;
+  color: #878787;
   border-radius: 12px;
   border: none;
   background-color: white;
-  color: #878787;
+
   appearance: none;
   cursor: pointer;
-  padding: 10px 30px;
 }
 
 select:hover {
@@ -115,6 +103,7 @@ select:focus {
 option[value="default"] {
   display: none;
 }
+
 
 @media (max-width: 480px) {
   .navContainer {
@@ -133,14 +122,14 @@ option[value="default"] {
   }
 
   .searchInput {
+    padding-left: 40px;
     width: 100%;
     height: 40px;
-    padding-left: 40px;
+    color: #333;
+    font-size: 16px;
     border: none;
     border-radius: 20px;
     background-color: #f2f2f2;
-    font-size: 16px;
-    color: #333;
   }
 
   .search {
@@ -165,11 +154,10 @@ option[value="default"] {
   select {
     width: 100%;
     height: 40px;
-    padding-left: 16px;
-    padding-right: 40px;
-    border: none;
     margin: 10px 10px 10px 0px;
-
+    padding-right: 40px;
+    padding-left: 16px;
+    border: none;
     appearance: none;
   }
 }

@@ -3,12 +3,12 @@
 }
 
 .emptyCart {
-  margin-top: 8em;
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 100%;
   gap: 40px;
+  margin-top: 8em;
+  width: 100%;
 }
 
 .emptyCartTitle {
@@ -18,12 +18,12 @@
 }
 
 .cartItem {
-  margin: 20px;
   display: flex;
-  gap: 2rem;
-  height: 140px;
   justify-content: space-between;
+  gap: 2rem;
+  margin: 20px;
   margin-bottom: 2%;
+  height: 140px;
 }
 
 .bookItemTotalPrice {
@@ -36,15 +36,15 @@
 
 .cartItemDeleteButton {
   display: block;
+  margin: auto;
+  width: 40px;
+  height: 40px;
+  border: none;
   background-image: url(../../assets/svg/icon_remove.svg);
   background-repeat: no-repeat;
   background-color: none;
   background-position: center;
-  border: none;
-  height: 40px;
-  width: 40px;
   background-color: #fff;
-  margin: auto;
 }
 
 .cartItemInfo {
@@ -68,11 +68,11 @@
 }
 
 .bookItemPrice {
+  align-self: center;
+  margin-top: 4%;
   font-weight: 700;
   font-size: 18px;
-  align-self: center;
   color: #f3564f;
-  margin-top: 4%;
 }
 
 .priceContainer {
@@ -80,18 +80,18 @@
 }
 
 .bookItemTotalPrice span {
+  align-self: center;
   color: black;
   font-weight: 600;
   font-size: 18px;
-  align-self: center;
 }
 
 .bookItemTotalPrice,
 .cartTotalPrice {
   align-self: center;
-  color: #f45650;
   font-weight: 600;
   font-size: 1.5rem;
+  color: #f45650;
 }
 
 .bookItemTotalPrice {
@@ -109,10 +109,15 @@
   width: inherit;
 }
 
+.cartTotalPriceLine {
+  display: flex;
+  gap: 1rem;
+}
+
 .cartTotal {
   display: flex;
-  gap: 10%;
   justify-content: end;
+  gap: 10%;
   margin: 20px;
 }
 
@@ -131,38 +136,28 @@
   transform: scale(1.1);
 }
 
-@media screen and (max-width: 768px) {
-  .shopCart {
-    margin-top: auto;
+@media screen and (max-width: 320px) {
+  .cartItemInfo {
+    flex-wrap: wrap;
+    margin: auto;
   }
 
-  .cartItems {
-    display: flex;
-    flex-direction: column;
+  .cartItemImage {
+    margin: auto;
   }
 
   .cartItemDescription {
-    display: initial;
-  }
-
-  .cartItem {
-    margin-bottom: 20px;
-    height: 100%;
-  }
-
-  .emptyCart {
     text-align: center;
+    margin-top: 10px;
   }
-}
 
-@media screen and (max-width: 575px) {
   .counter {
-    gap: 10%;
-    flex-direction: column;
+    display: contents;
+    margin: auto;
   }
 
-  .cartTotalPrice {
-    width: 100%;
+  .cartTotal {
+    gap: 5%;
   }
 }
 
@@ -200,33 +195,39 @@
   .cartItemDeleteButton {
     font-size: 14px;
   }
+}
 
-  .cartPurchaseButton {
-    font-size: 14px;
+@media screen and (max-width: 575px) {
+  .counter {
+    flex-direction: column;
+    gap: 10%;
+  }
+
+  .cartTotalPrice {
+    width: 100%;
   }
 }
 
-@media screen and (max-width: 320px) {
-  .cartItemInfo {
-    flex-wrap: wrap;
-    margin: auto;
+@media screen and (max-width: 768px) {
+  .shopCart {
+    margin-top: auto;
   }
 
-  .cartItemImage {
-    margin: auto;
+  .cartItems {
+    display: flex;
+    flex-direction: column;
   }
 
   .cartItemDescription {
+    display: initial;
+  }
+
+  .cartItem {
+    margin-bottom: 20px;
+    height: 100%;
+  }
+
+  .emptyCart {
     text-align: center;
-    margin-top: 10px;
-  }
-
-  .counter {
-    display: contents;
-    margin: auto;
-  }
-
-  .cartTotal {
-    gap: 5%;
   }
 }

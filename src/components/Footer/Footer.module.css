@@ -1,14 +1,14 @@
 .footerComponent {
-  background-color: #f45650;
   height: 64px;
   z-index: 1;
+  background-color: #f45650;
 }
 
 .footerContainer {
   display: flex;
+  justify-content: center;
   align-self: center;
   align-items: center;
-  justify-content: center;
 }
 
 .footerName {

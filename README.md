@@ -1,7 +1,6 @@
-# Getting Started with Create React App
+# Check Out Project
 
-This project is deployed on: ***
-
+Open my project [here](https://dariia-zhukovska.github.io/prometheus-x-course-task/)
 
 # Getting Started with Create React App
 

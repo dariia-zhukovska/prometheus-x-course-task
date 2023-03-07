@@ -1,7 +1,18 @@
 .pageNotFound {
-  margin-top: 10em;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  margin-top: 10em;
   width: 100%;
+}
+
+
+@media screen and (max-width: 480px) {
+
+  img {
+    width: 80%;
+    display: flex;
+    margin: auto;
+    margin-bottom: 24%;
+  }
 }

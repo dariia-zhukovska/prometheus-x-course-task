@@ -8,9 +8,9 @@
 }
 
 .backBtn {
+  border: none;
   background-image: url(./../../assets/svg/icon_back.svg);
   background-repeat: no-repeat;
   background-color: white;
-  border: none;
   cursor: pointer;
 }

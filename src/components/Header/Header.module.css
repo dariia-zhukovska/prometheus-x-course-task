@@ -9,6 +9,7 @@
 .headerName {
   display: flex;
   gap: 10px;
+  padding-left: 38px;
   font-family: "Barlow";
   font-weight: 700;
   font-size: 20px;
@@ -16,7 +17,6 @@
   background-image: url("../../assets/svg/logo.svg");
   background-repeat: no-repeat;
   background-position-x: start;
-  padding-left: 38px;
   background-position-y: center;
 }
 
@@ -44,12 +44,13 @@ div {
   position: absolute;
   top: -6px;
   right: -10px;
-  color: white;
-  background-color: #f45650;
-  border-radius: 50%;
   align-self: center;
   padding: 1px 6px 3px 6px;
+  color: white;
   font-size: 10px;
+
+  background-color: #f45650;
+  border-radius: 50%;
 }
 
 .buttonSignOut {
@@ -59,7 +60,6 @@ div {
   line-height: 24px;
   text-align: center;
   color: #ffffff;
-
   border-radius: 8px;
   border: transparent;
   background: #f45650;
@@ -72,7 +72,6 @@ div {
 
 .headerUsername {
   display: flex;
-
   gap: 10px;
 }
 
@@ -80,13 +79,6 @@ div {
   font-size: 20px;
   color: #f45650;
 }
-
-/* .header__username {
-  background-image: url('../../assets/svg/icon_account.svg');
-  background-repeat: no-repeat;
-  background-position-x: start;
-  background-position-y: center;
-} */
 
 @media (max-width: 767px) {
   .headerContainer {
