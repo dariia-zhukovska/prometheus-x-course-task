@@ -1,8 +1,6 @@
-import React from "react";
 import { IBookListData } from "../../types";
 import styles from "./Book.module.css";
 import imageNotFound from "../../assets/img/imageNotFound.png";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 interface IProps {
@@ -40,7 +38,7 @@ export default function Book({ bookItemData }: IProps) {
         </div>
         <div className={styles.bookItemDescription}>
           {bookItemData.description}
-        </div>{" "}
+        </div>
       </div>
     </li>
   );

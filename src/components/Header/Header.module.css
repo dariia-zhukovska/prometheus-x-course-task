@@ -13,7 +13,7 @@
   font-weight: 700;
   font-size: 20px;
   font-style: normal;
-  background-image: url('../../assets/svg/logo.svg');
+  background-image: url("../../assets/svg/logo.svg");
   background-repeat: no-repeat;
   background-position-x: start;
   padding-left: 38px;
@@ -29,14 +29,12 @@ div {
   font-weight: 400;
 }
 
-
 .userNavigation {
   display: flex;
   justify-content: end;
   align-items: center;
   gap: 40px;
 }
-
 
 .headerCart {
   position: relative;
@@ -47,7 +45,7 @@ div {
   top: -6px;
   right: -10px;
   color: white;
-  background-color: #F45650;
+  background-color: #f45650;
   border-radius: 50%;
   align-self: center;
   padding: 1px 6px 3px 6px;
@@ -64,8 +62,8 @@ div {
 
   border-radius: 8px;
   border: transparent;
-  background: #F45650;
-  transition: all .2s ease-in-out;
+  background: #f45650;
+  transition: all 0.2s ease-in-out;
 }
 
 .buttonSignOut:hover {
@@ -75,12 +73,12 @@ div {
 .headerUsername {
   display: flex;
 
-  gap: 10px
+  gap: 10px;
 }
 
 .headerUsername div {
   font-size: 20px;
-  color: #F45650;
+  color: #f45650;
 }
 
 /* .header__username {
@@ -94,11 +92,10 @@ div {
   .headerContainer {
     flex-direction: column;
     height: fit-content;
-   gap: 1rem;;
+    gap: 1rem;
   }
 
   .headerName span {
     display: none;
   }
 }
-

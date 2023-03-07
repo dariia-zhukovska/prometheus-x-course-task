@@ -1,7 +1,6 @@
 .bookItem {
   display: flex;
   padding: 8px 25px;
-
 }
 
 .bookItemLeft {
@@ -9,8 +8,6 @@
   height: 340px;
   box-shadow: 1px 1px 20px rgba(20, 20, 20, 0.25);
 }
-
-
 
 .bookItemRight,
 .bookItemInfo {
@@ -40,7 +37,7 @@
   line-height: 20px;
   display: flex;
   align-items: center;
-  color: #3A3A3C;
+  color: #3a3a3c;
   line-height: 20px;
 }
 
@@ -51,7 +48,6 @@
   margin-bottom: 16px;
 }
 
-
 .bookItemPriceLine {
   width: 100%;
   display: flex;
@@ -60,10 +56,10 @@
   width: max-content;
 }
 
- .bookItemPriceLine div {
-   display: flex;
+.bookItemPriceLine div {
+  display: flex;
   gap: 2rem;
- }
+}
 
 /* .bookItemPriceLine div:not(:last-child) {
   margin-right: 52px;
@@ -75,11 +71,11 @@
   line-height: 34px;
   align-self: center;
   width: max-content;
-  color: #F3564F;
+  color: #f3564f;
 }
 
 .bookItemTotalPrice {
-  color: #F45650;
+  color: #f45650;
   font-weight: 600;
   font-size: 22px;
   align-self: center;
@@ -93,8 +89,8 @@
   color: #fff;
   border-radius: 8px;
   border-style: none;
-  background-color: #F45650;
-  transition: all .2s ease-in-out;
+  background-color: #f45650;
+  transition: all 0.2s ease-in-out;
 }
 
 .ButtonAddToCart:hover {
@@ -102,28 +98,22 @@
 }
 
 @media (max-width: 1023px) {
-
   .bookItem {
     position: relative;
   }
-  .bookItemPriceLine {
 
+  .bookItemPriceLine {
     display: flex;
     flex-direction: column;
   }
 
-    .bookItemPriceLine div {
-      margin-right: 0;
-      
-    }
+  .bookItemPriceLine div {
+    margin-right: 0;
+  }
 }
 
-
 @media (max-width: 767px) {
-  
-
-
-/* 
+  /* 
 .bookItemTitle {
   font-size: 30px;
   line-height: normal;
@@ -132,38 +122,32 @@
     display: flex;
     flex-direction: column;
   } */
-
-
-  
-} 
-
-
+}
 
 @media screen and (max-width: 767px) {
   .bookItem {
     display: flex;
-    
+
     flex-direction: column;
     align-items: center;
   }
 
   .bookItemImage {
-   
     max-width: 300px;
     margin-bottom: 16px;
   }
 
   .bookItemRight {
     align-self: center;
-      align-items: center;
+    align-items: center;
     width: 100%;
   }
 
-    .bookItemLeft {
-      align-self: center;
-      margin-bottom: 16px;
-      margin-right: 0;
-    }
+  .bookItemLeft {
+    align-self: center;
+    margin-bottom: 16px;
+    margin-right: 0;
+  }
 
   .bookItemInfo {
     margin-bottom: 16px;
@@ -180,12 +164,10 @@
     align-items: center;
   }
 
-     .bookItemPriceLine div:last-child {
-       margin-right: 0;
-       display: block;
-     }
-  
-     
+  .bookItemPriceLine div:last-child {
+    margin-right: 0;
+    display: block;
+  }
 
   .bookItemCount {
     margin-top: 8px;
@@ -208,7 +190,6 @@
   }
 
   .bookItemImage {
-
     margin: 16px 0;
   }
 

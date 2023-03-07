@@ -22,11 +22,8 @@
 .counter button:hover {
   transform: scale(1.3);
   background-color: none;
-  color: #F3564F;
+  color: #f3564f;
 }
-
-
-
 
 .counter input {
   border: none;

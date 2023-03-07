@@ -1,95 +1,79 @@
 .navContainer {
-   display: flex;
-   justify-content: end;
-   align-items: center;
-   height: 64px;
-   background: #F45650;
-   height: fit-content;
-   gap: 2%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 64px;
+  background: #f45650;
+  height: fit-content;
+  gap: 2%;
   padding: 10px;
 }
 
-
-
-
-
-
 .search {
-   /* position: absolute; */
-   width: 24px;
-   height: 24px;
-   left: 10px;
-   top: 10px;
-   background-image: url('../../assets/svg/search.svg');
-   background-repeat: no-repeat;
-   border: none;
-   /* background-color: white; */
-   /* align-self: center; */
+  /* position: absolute; */
+  width: 24px;
+  height: 24px;
+  left: 10px;
+  top: 10px;
+  background-image: url("../../assets/svg/search.svg");
+  background-repeat: no-repeat;
+  border: none;
+  /* background-color: white; */
+  /* align-self: center; */
 }
 
-
-
 .inputBox {
-   max-width: 350px;
-   position: relative;
-
+  max-width: 350px;
+  position: relative;
 }
 
 .inputBox input {
-   position: relative;
-   font-size: 16px;
-   font-weight: 400;
-   color: #9d9fa3;
-   border: none;
-   outline: none;
-   margin: 8px auto;
-   padding: 10px 24px;
-   border-radius: 8px;
-   border: transparent;
+  position: relative;
+  font-size: 16px;
+  font-weight: 400;
+  color: #9d9fa3;
+  border: none;
+  outline: none;
+  margin: 8px auto;
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: transparent;
 
-   background-repeat: no-repeat;
-   background: white;
+  background-repeat: no-repeat;
+  background: white;
 }
 
 .inputBox input::placeholder {
-  color: #CACACA;
-  border-bottom: 1px solid #CACACA; 
+  color: #cacaca;
+  border-bottom: 1px solid #cacaca;
 }
 
 .inputBox input {
   border-radius: 13px;
-
 }
 
 .inputBox .search {
   position: absolute;
   top: 30%;
   left: 90%;
-  background-image: url('../../assets/svg/search.svg');
+  background-image: url("../../assets/svg/search.svg");
 }
-
-
-
-
-
 
 /* Price Filter */
 
-
-
-
 .select_container {
-/* position: relative; */
+  /* position: relative; */
   display: inline-block;
   margin: 10px;
   /*font-size: 16px;
   background-color: white;
-  *//*background: #FFFFFF;
-  */font-family: 'Barlow';
+  */
+  /*background: #FFFFFF;
+  */
+  font-family: "Barlow";
   font-weight: 400;
   border-radius: 12px;
 }
-
 
 .select-menu select {
   padding: 5px;
@@ -118,10 +102,7 @@ select {
   appearance: none;
   cursor: pointer;
   padding: 10px 30px;
-
 }
-
-
 
 select:hover {
   background-color: white;
@@ -129,75 +110,66 @@ select:hover {
 
 select:focus {
   outline: none;
-
 }
 
-option[value='default'] {
+option[value="default"] {
   display: none;
 }
 
-
-
 @media (max-width: 480px) {
   .navContainer {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .inputContainer {
-      width: 90%;
-    }
-  
-    .inputBox {
-      position: relative;
-      max-width: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .inputContainer {
+    width: 90%;
+  }
 
-    }
-  
-    .searchInput {
-      width: 100%;
-      height: 40px;
-      padding-left: 40px;
-      border: none;
-      border-radius: 20px;
-      background-color: #f2f2f2;
-      font-size: 16px;
-      color: #333;
-    }
-  
-    .search {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      width: 16px;
-      height: 16px;
-      background-image: url('../../assets/svg/search.svg');
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-  
-    .priceContainer {
-      width: 90%;
-    }
-  
-    .selectContainer {
-      width: 100%;
-    }
+  .inputBox {
+    position: relative;
+    max-width: inherit;
+  }
 
-  
-    select {
-      width: 100%;
-      height: 40px;
-      padding-left: 16px;
-      padding-right: 40px;
-      border: none;
-      margin: 10px 10px 10px 0px;
+  .searchInput {
+    width: 100%;
+    height: 40px;
+    padding-left: 40px;
+    border: none;
+    border-radius: 20px;
+    background-color: #f2f2f2;
+    font-size: 16px;
+    color: #333;
+  }
 
-      appearance: none;
-    }
+  .search {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 16px;
+    height: 16px;
+    background-image: url("../../assets/svg/search.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 
+  .priceContainer {
+    width: 90%;
+  }
 
-    
+  .selectContainer {
+    width: 100%;
+  }
+
+  select {
+    width: 100%;
+    height: 40px;
+    padding-left: 16px;
+    padding-right: 40px;
+    border: none;
+    margin: 10px 10px 10px 0px;
+
+    appearance: none;
+  }
 }

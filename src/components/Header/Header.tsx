@@ -2,13 +2,11 @@ import { Link, useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 import icon_cart from "../../assets/svg/icon_cart.svg";
 import userLogo from "../../assets/svg/icon_account.svg";
-import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import useCart from "../../hooks/useCart";
 
 export default function Header() {
   const navigate = useNavigate();
   const { cartItems, username, setUsername } = useCart();
-
   const cartCount = cartItems.length;
 
   const handleSignOutClick = () => {
@@ -60,5 +58,3 @@ export default function Header() {
     </header>
   );
 }
-
-// 'uil_times close_icon header__closed_search'

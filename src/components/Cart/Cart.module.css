@@ -11,11 +11,10 @@
   gap: 40px;
 }
 
-
 .emptyCartTitle {
   font-weight: 500;
   font-size: 40px;
-  color: #0E0E2C;
+  color: #0e0e2c;
 }
 
 .cartItem {
@@ -25,15 +24,11 @@
   height: 140px;
   justify-content: space-between;
   margin-bottom: 2%;
- 
-
 }
 
 .bookItemTotalPrice {
-      width: max-content;
+  width: max-content;
 }
-
-
 
 .cartItemImage {
   margin-right: 1em;
@@ -52,20 +47,10 @@
   margin: auto;
 }
 
-
-
-
-
 .cartItemInfo {
   display: flex;
   width: 100%;
 }
-
-
-/* .cartItemPrice {
-  display: none;
-} */
-
 
 .bookItemTitle,
 .cartTotalTitle {
@@ -82,37 +67,31 @@
   color: #797979;
 }
 
-
-
 .bookItemPrice {
   font-weight: 700;
   font-size: 18px;
   align-self: center;
-  color: #F3564F;
+  color: #f3564f;
   margin-top: 4%;
 }
 
-
 .priceContainer {
   display: flex;
- 
 }
 
 .bookItemTotalPrice span {
   color: black;
   font-weight: 600;
   font-size: 18px;
-
+  align-self: center;
 }
-
-
 
 .bookItemTotalPrice,
 .cartTotalPrice {
   align-self: center;
-  color: #F45650;
+  color: #f45650;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .bookItemTotalPrice {
@@ -137,8 +116,6 @@
   margin: 20px;
 }
 
-
-
 .cartPurchaseButton {
   padding: 12px 40px;
   font-weight: 600;
@@ -146,20 +123,19 @@
   color: #fff;
   border-radius: 8px;
   border-style: none;
-  background-color: #F45650;
-  transition: all .2s ease-in-out;
+  background-color: #f45650;
+  transition: all 0.2s ease-in-out;
 }
 
 .cartPurchaseButton:hover {
   transform: scale(1.1);
 }
 
-
-
 @media screen and (max-width: 768px) {
   .shopCart {
     margin-top: auto;
   }
+
   .cartItems {
     display: flex;
     flex-direction: column;
@@ -171,7 +147,7 @@
 
   .cartItem {
     margin-bottom: 20px;
-    height: 100%
+    height: 100%;
   }
 
   .emptyCart {
@@ -181,27 +157,24 @@
 
 @media screen and (max-width: 575px) {
   .counter {
-      gap: 10%;
-      flex-direction: column;
-    }
+    gap: 10%;
+    flex-direction: column;
+  }
 
-    .cartTotalPrice {
-      width: 100%;
-  
-    }
-
+  .cartTotalPrice {
+    width: 100%;
+  }
 }
 
-@media screen and (max-width:480px) {
-
+@media screen and (max-width: 480px) {
   .cartItem {
     width: 80%;
   }
 
   .cartItemImage {
     width: 80%;
-   
   }
+
   .bookItemTitle {
     font-size: 16px;
   }
@@ -210,10 +183,19 @@
     font-size: 14px;
   }
 
+  .cartTotal {
+    justify-content: space-between;
+  }
+
+  .cartTotalPriceLine {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
   .bookItemPrice {
     font-size: 14px;
   }
-
 
   .cartItemDeleteButton {
     font-size: 14px;
@@ -224,9 +206,8 @@
   }
 }
 
-
-@media screen and (max-width:320px) {
-.cartItemInfo {
+@media screen and (max-width: 320px) {
+  .cartItemInfo {
     flex-wrap: wrap;
     margin: auto;
   }
@@ -235,7 +216,7 @@
     margin: auto;
   }
 
-  .cartItemDescription{
+  .cartItemDescription {
     text-align: center;
     margin-top: 10px;
   }
@@ -243,11 +224,9 @@
   .counter {
     display: contents;
     margin: auto;
-
   }
 
   .cartTotal {
     gap: 5%;
   }
-
 }

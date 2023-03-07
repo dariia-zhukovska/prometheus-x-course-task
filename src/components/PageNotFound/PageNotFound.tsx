@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./PageNotFound.module.css";
 import pageNotFound from "../../assets/img/404.svg";
 import NavMenu from "../NavMenu/NavMenu";

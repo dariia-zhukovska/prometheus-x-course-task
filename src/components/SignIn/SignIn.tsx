@@ -1,7 +1,7 @@
-import React, { useContext, useState } from "react";
+import { useState } from "react";
 import styles from "./SignIn.module.css";
 import avatar from "../../assets/img/avatar.png";
-import { useNavigate, Routes, Route, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useCart from "../../hooks/useCart";
 
 export default function SignIn() {
@@ -15,9 +15,7 @@ export default function SignIn() {
   };
 
   const handleSignInClick = () => {
-    // localStorage.setItem("username", usernameValue);
     setUsername(usernameValue);
-
     navigate("/book-list");
   };
 

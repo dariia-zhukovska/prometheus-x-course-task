@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
 import styles from "./Cart.module.css";
 import emptyCart from "../../assets/img/empty_cart.svg";
 import imageNotFound from "../../assets/img/imageNotFound.png";
-import { IBookListData, ICartBookData } from "../../types";
 import Counter from "../Counter/Counter";
 import NavMenu from "../NavMenu/NavMenu";
 import toast, { Toaster } from "react-hot-toast";
@@ -82,9 +80,11 @@ export default function Cart() {
                 </div>
               ))}
               <div className={styles.cartTotal}>
-                <div className={styles.cartTotalTitle}>Cart Total:</div>
-                <div className={styles.cartTotalPrice}>
-                  {cartTotalPrice.toFixed(2)} $
+                <div className={styles.cartTotalPriceLine}>
+                  <div className={styles.cartTotalTitle}>Cart Total:</div>
+                  <div className={styles.cartTotalPrice}>
+                    {cartTotalPrice.toFixed(2)} $
+                  </div>
                 </div>
                 <button
                   className={styles.cartPurchaseButton}

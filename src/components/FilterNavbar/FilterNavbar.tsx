@@ -15,7 +15,6 @@ export default function FilterNavbar({
 }: IProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const [priceFilter, setPriceFilter] = useState(defaultOption);
-  const [bookNotFound, setBookNotFound] = useState("");
 
   const handleSearchTermChange = (
     event: React.ChangeEvent<HTMLInputElement>

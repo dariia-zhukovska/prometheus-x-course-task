@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { useState } from "react";
 import { IBookListData } from "../../types";
 import Book from "../Book/Book";
 import styles from "./BookList.module.css";
 import booksData from "../../data/books.json";
-
 import FilterNavbar from "../FilterNavbar/FilterNavbar";
 
 export default function BookList() {

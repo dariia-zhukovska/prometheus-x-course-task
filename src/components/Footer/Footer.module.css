@@ -1,20 +1,14 @@
-.footerComponent{
-  
-
-  background-color: #F45650;
+.footerComponent {
+  background-color: #f45650;
   height: 64px;
-    z-index: 1;
-
-
+  z-index: 1;
 }
 
-
 .footerContainer {
-  
   display: flex;
-align-self: center;
+  align-self: center;
   align-items: center;
-    justify-content: center; 
+  justify-content: center;
 }
 
 .footerName {
@@ -22,9 +16,7 @@ align-self: center;
   font-family: "Barlow";
   font-weight: 700;
   font-size: 20px;
-
 }
-
 
 .footerName a {
   color: white;

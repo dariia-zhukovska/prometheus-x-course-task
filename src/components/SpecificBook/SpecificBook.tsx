@@ -1,8 +1,8 @@
-import React, { useRef, useState, useEffect } from "react";
-import { IBookListData, ICartBookData } from "../../types";
+import { useState, useEffect } from "react";
+import { IBookListData } from "../../types";
 import styles from "./SpecificBook.module.css";
 import imageNotFound from "../../assets/img/imageNotFound.png";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import booksData from "../../data/books.json";
 import Counter from "../Counter/Counter";
 import PageNotFound from "../PageNotFound/PageNotFound";
@@ -18,7 +18,6 @@ export default function SpecificBook() {
   const [countValue, setCountValue] = useState(1);
   const [totalPrice, setTotalPrice] = useState(1);
   const { cartItems, setCartItems } = useCart();
-  console.log("BOOK", cartItems);
 
   const { id } = useParams();
 
