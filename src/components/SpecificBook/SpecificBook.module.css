@@ -1,6 +1,5 @@
 .bookItem {
   display: flex;
-  margin-top: 60px;
   padding: 8px 25px;
 
 }
@@ -17,16 +16,13 @@
 .bookItemInfo {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   width: 80%;
 }
 
-
-
 .bookItemTitle {
   font-weight: 500;
-  font-size: 46px;
-  line-height: 70px;
+  font-size: 4vh;
   color: #000000;
 }
 
@@ -51,11 +47,6 @@
 .bookItemMore {
   font-weight: 700;
   font-size: 16px;
-  padding-left: 24px;
-  background-image: url('../../assets/svg/icon_vector_down.svg');
-  background-repeat: no-repeat;
-  background-position-y: center;
-  background-position-x: 4px;
   background-size: 12px;
   margin-bottom: 16px;
 }
@@ -66,22 +57,24 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: max-content;
 }
 
  .bookItemPriceLine div {
    display: flex;
+  gap: 2rem;
  }
 
-.bookItemPriceLine div:not(:last-child) {
+/* .bookItemPriceLine div:not(:last-child) {
   margin-right: 52px;
-}
+} */
 
 .bookItemPrice {
   font-weight: 700;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 34px;
   align-self: center;
+  width: max-content;
   color: #F3564F;
 }
 
@@ -93,6 +86,7 @@
 }
 
 .ButtonAddToCart {
+  width: max-content;
   padding: 12px 40px;
   font-weight: 600;
   font-size: 20px;
@@ -108,53 +102,145 @@
 }
 
 @media (max-width: 1023px) {
+
+  .bookItem {
+    position: relative;
+  }
   .bookItemPriceLine {
+
     display: flex;
     flex-direction: column;
   }
 
     .bookItemPriceLine div {
       margin-right: 0;
-      justify-content: space-between;
+      
     }
 }
 
 
 @media (max-width: 767px) {
+  
+
+
+/* 
+.bookItemTitle {
+  font-size: 30px;
+  line-height: normal;
+} */
+  /* .bookItemPriceLine {
+    display: flex;
+    flex-direction: column;
+  } */
+
+
+  
+} 
+
+
+
+@media screen and (max-width: 767px) {
+  .bookItem {
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bookItemImage {
+   
+    max-width: 300px;
+    margin-bottom: 16px;
+  }
+
+  .bookItemRight {
+    align-self: center;
+      align-items: center;
+    width: 100%;
+  }
+
+    .bookItemLeft {
+      align-self: center;
+      margin-bottom: 16px;
+      margin-right: 0;
+    }
+
+  .bookItemInfo {
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .bookItemMoreCard {
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  .bookItemPriceLine {
+    flex-direction: column;
+    align-items: center;
+  }
+
+     .bookItemPriceLine div:last-child {
+       margin-right: 0;
+       display: block;
+     }
+  
+     
+
+  .bookItemCount {
+    margin-top: 8px;
+  }
+
+  .bookItemTotalPrice {
+    margin-top: 8px;
+  }
+
+  .ButtonAddToCart {
+    margin-top: 16px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
   .bookItem {
     display: flex;
     flex-direction: column;
   }
 
-  .bookItemLeft {
-    align-self: center;
-    margin-bottom: 16px;
-    margin-right: 0;
+  .bookItemImage {
+
+    margin: 16px 0;
   }
-.bookItemRight {
-  align-self: center;
-  align-items: center;
-  width: 100%;
-}
 
-
-.bookItemTitle {
-  font-size: 30px;
-  line-height: normal;
-}
-  .bookItemPriceLine {
+  .bookItemRight {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
   }
 
+  .bookItemPriceLine {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
 
-   .bookItemPriceLine div:last-child {
-  margin-right: 0;
-  display: block;
+  .bookItemPrice {
+    margin-right: 8px;
+  }
+
+  .bookItemCount {
+    margin-right: 8px;
+  }
+
+  .bookItemTotalPrice {
+    margin-top: 8px;
   }
 
   .ButtonAddToCart {
     margin-top: 16px;
+    width: 100%;
   }
 }
- 

@@ -19,17 +19,19 @@
 }
 
 .cartItem {
-
   margin: 20px;
   display: flex;
+  gap: 2rem;
   height: 140px;
   justify-content: space-between;
   margin-bottom: 2%;
+ 
 
 }
 
-
-
+.bookItemTotalPrice {
+      width: max-content;
+}
 
 
 
@@ -56,6 +58,7 @@
 
 .cartItemInfo {
   display: flex;
+  width: 100%;
 }
 
 
@@ -92,8 +95,7 @@
 
 .priceContainer {
   display: flex;
-  justify-content: end;
-  justify-content: space-between;
+ 
 }
 
 .bookItemTotalPrice span {
@@ -110,7 +112,7 @@
   align-self: center;
   color: #F45650;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 1rem;
 }
 
 .bookItemTotalPrice {
@@ -119,12 +121,13 @@
 
 .counter {
   display: flex;
-  justify-content: space-between;
+  gap: 1rem;
 }
 
 .cartItemDescription {
   display: flex;
   justify-content: space-between;
+  width: inherit;
 }
 
 .cartTotal {
@@ -152,19 +155,99 @@
 }
 
 
-@media (max-width: 1023px) {
- 
-.cartTotal {
-margin-top: 10%;
-}
-}
 
-@media (max-width: 768px ) {
-  .counter {
-    /* display: none; */
+@media screen and (max-width: 768px) {
+  .shopCart {
+    margin-top: auto;
+  }
+  .cartItems {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cartItemDescription {
+    display: initial;
   }
 
   .cartItem {
-    flex-wrap: wrap;
+    margin-bottom: 20px;
+    height: 100%
   }
+
+  .emptyCart {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .counter {
+      gap: 10%;
+      flex-direction: column;
+    }
+
+    .cartTotalPrice {
+      width: 100%;
+  
+    }
+
+}
+
+@media screen and (max-width:480px) {
+
+  .cartItem {
+    width: 80%;
+  }
+
+  .cartItemImage {
+    width: 80%;
+   
+  }
+  .bookItemTitle {
+    font-size: 16px;
+  }
+
+  .bookItemAuthor {
+    font-size: 14px;
+  }
+
+  .bookItemPrice {
+    font-size: 14px;
+  }
+
+
+  .cartItemDeleteButton {
+    font-size: 14px;
+  }
+
+  .cartPurchaseButton {
+    font-size: 14px;
+  }
+}
+
+
+@media screen and (max-width:320px) {
+.cartItemInfo {
+    flex-wrap: wrap;
+    margin: auto;
+  }
+
+  .cartItemImage {
+    margin: auto;
+  }
+
+  .cartItemDescription{
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .counter {
+    display: contents;
+    margin: auto;
+
+  }
+
+  .cartTotal {
+    gap: 5%;
+  }
+
 }

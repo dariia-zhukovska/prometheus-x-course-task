@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { IBookListData } from "../../types";
 import styles from "./FilterNavbar.module.css";
-import vectorRed from "../../assets/img/svg/icon_vector_red.svg";
 
 interface IProps {
   bookListData: IBookListData[];
@@ -16,6 +15,7 @@ export default function FilterNavbar({
 }: IProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const [priceFilter, setPriceFilter] = useState(defaultOption);
+  const [bookNotFound, setBookNotFound] = useState("");
 
   const handleSearchTermChange = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -40,7 +40,6 @@ export default function FilterNavbar({
           (priceFilter === "30+" && book.price > 30))
       );
     });
-
     setFilteredBooks(filteredBooks);
   }, [bookListData, searchTerm, priceFilter]);
 
@@ -50,10 +49,6 @@ export default function FilterNavbar({
     <div className={styles.navContainer}>
       <div className={styles.inputContainer}>
         <div className={styles.inputBox}>
-          {/* <span className={styles.search}>
-            <i className={styles.searchIcon}></i>
-          </span> */}
-
           <input
             type="text"
             placeholder="Search by book name"

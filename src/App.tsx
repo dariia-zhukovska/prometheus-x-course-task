@@ -10,7 +10,7 @@ import SpecificBook from "./components/SpecificBook/SpecificBook";
 import booksData from "./data/books.json";
 import Cart from "./components/Cart/Cart";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
-import { PrivateRoute } from "./providers/PrivateRoute";
+import { PrivateRoute } from "./routes/PrivateRoute";
 
 const App = () => {
   const [cartCount, setCartCount] = useState(0);
@@ -40,13 +40,13 @@ const App = () => {
   //   );
   // };
 
-  const handleSignIn = () => {
-    setIsSignedIn(true);
-  };
+  // const handleSignIn = () => {
+  //   setIsSignedIn(true);
+  // };
 
-  const handleSignOut = () => {
-    setIsSignedIn(false);
-  };
+  // const handleSignOut = () => {
+  //   setIsSignedIn(false);
+  // };
 
   return (
     <div className="App">

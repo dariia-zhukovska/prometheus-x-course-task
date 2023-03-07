@@ -97,8 +97,57 @@ transform: scale(1.1) ;
   transform: scale(1.2)
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 480px) {
   .bookItem {
-   
+    flex-direction: column;
+    align-items: center;
+        width: 80%;
+  }
+
+  .bookItemImage {
+    width: 80%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .bookDescription {
+    text-align: center;
+    width: inherit;
+  }
+
+  .bookItemTitle {
+    font-size: 2vh;
+      max-width: 90%;
+      align-self: center;
+  }
+
+  .bookItemAuthor {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    align-self: center;
+  }
+
+  .bookItemPriceLine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bookItemPrice {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .bookItemButton {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .bookItemShortDescription {
+    display: none;
+  }
+
+  .bookItemDescription {
+    font-size: 0.8rem;
   }
 }

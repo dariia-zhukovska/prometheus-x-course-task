@@ -44,3 +44,9 @@ input::-webkit-inner-spin-button {
 button {
   cursor: pointer;
 }
+
+/* @media (max-width: 767px) {
+  body {
+    overflow: scroll;
+  }
+} */
