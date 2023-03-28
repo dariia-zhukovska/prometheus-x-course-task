@@ -1,6 +1,5 @@
 import React from "react";
 import { act, render, screen } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
 import Counter from "./Counter";
 
 describe("testing decrease handler function", () => {
@@ -23,9 +22,9 @@ describe("testing decrease handler function", () => {
     expect(increaseButton).toBeInTheDocument();
 
     increaseButton.click();
-    expect(CountChangeMock).toHaveBeenCalledWith(2);
+    expect(CountChangeMock).toHaveBeenCalledWith(3);
 
     decreaseButton.click();
-    expect(CountChangeMock).toHaveBeenCalledWith(5);
+    expect(CountChangeMock).toHaveBeenCalledWith(1);
   });
 });

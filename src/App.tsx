@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import SignIn from "./components/SignIn/SignIn";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import BookList from "./components/BookList/BookList";
 import SpecificBook from "./components/SpecificBook/SpecificBook";
-import booksData from "./data/books.json";
 import Cart from "./components/Cart/Cart";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
 import { PrivateRoute } from "./routes/PrivateRoute";
@@ -21,7 +20,6 @@ const App = () => {
     if (cartData) {
       const items = JSON.parse(cartData);
       setCartCount(items.length);
-      console.log(items);
     }
   }, [username]);
 
@@ -30,9 +28,17 @@ const App = () => {
       <Header />
       <div className="mainContainer">
         <Routes>
-          <Route path="/" element={<SignIn />}></Route>
           <Route
-            path="book-list"
+            path="/"
+            element={
+              <PrivateRoute>
+                <BookList />
+              </PrivateRoute>
+            }
+          ></Route>
+          <Route path="/signin" element={<SignIn />}></Route>
+          <Route
+            path="books"
             element={
               <PrivateRoute>
                 <BookList />
@@ -40,7 +46,7 @@ const App = () => {
             }
           ></Route>
           <Route
-            path="book-list/:id"
+            path="books/:id"
             element={
               <PrivateRoute>
                 <SpecificBook />

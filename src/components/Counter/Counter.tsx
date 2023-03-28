@@ -1,3 +1,4 @@
+import { ChangeEvent } from "react";
 import styles from "./Counter.module.css";
 
 interface IProps {
@@ -18,7 +19,7 @@ export default function Counter({ count, setCount }: IProps) {
     }
   };
 
-  const handleInputChange = (event: any) => {
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(event.target.value, 10);
     if (!isNaN(value) && value >= 1 && value <= 42) {
       setCount(value);

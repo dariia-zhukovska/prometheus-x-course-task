@@ -11,13 +11,13 @@ export default function Header() {
 
   const handleSignOutClick = () => {
     setUsername(null);
-    navigate("/");
+    navigate("/signin");
   };
 
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headerName}>
-        <Link to="book-list">JS BAND STORE</Link>
+        <Link to="books">JS BAND STORE</Link>
         <span> | </span>
         <a
           target="_blank"

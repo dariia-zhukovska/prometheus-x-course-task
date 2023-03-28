@@ -1,6 +1,5 @@
-import React from "react";
+
 import { render, screen, act } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
 import SpecificBook from "./SpecificBook";
 
 jest.mock("../NavMenu/NavMenu", () => () => null);

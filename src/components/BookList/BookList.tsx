@@ -5,6 +5,8 @@ import styles from "./BookList.module.css";
 import booksData from "../../data/books.json";
 import FilterNavbar from "../FilterNavbar/FilterNavbar";
 
+
+
 export default function BookList() {
   const [filteredBooks, setFilteredBooks] = useState<IBookListData[]>([]);
 

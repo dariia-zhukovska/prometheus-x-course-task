@@ -42,7 +42,7 @@ export default function SpecificBook() {
     setIsExpanded(!isExpanded);
   };
 
-  if (!selectedBook) {
+  if (!selectedBook.id) {
     return <PageNotFound />;
   }
 
@@ -55,7 +55,6 @@ export default function SpecificBook() {
       const selectedCartItem = { ...cartItems[selectedCartItemIndex] };
       selectedCartItem.count = countValue;
       selectedCartItem.totalPrice = totalPrice;
-      console.log(selectedCartItem);
 
       const newItems = cartItems.map((item) => {
         return +item.id === +selectedBook.id ? selectedCartItem : item;
@@ -102,7 +101,10 @@ export default function SpecificBook() {
               <div
                 className={styles.bookItemMore}
                 onClick={handleToggle}
-                style={{ backgroundColor: isExpanded ? vectorUp : vectorDown }}
+                style={{
+                  backgroundColor: isExpanded ? vectorUp : vectorDown,
+                  cursor: "pointer",
+                }}
               >
                 {isExpanded ? "More about book" : "Less about book"}
               </div>

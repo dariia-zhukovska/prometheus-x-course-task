@@ -28,7 +28,7 @@ export default function Book({ bookItemData }: IProps) {
           </div>
           <button
             className={styles.bookItemButton}
-            onClick={() => navigate(`/book-list/${bookItemData.id}`)}
+            onClick={() => navigate(`/books/${bookItemData.id}`)}
           >
             View
           </button>

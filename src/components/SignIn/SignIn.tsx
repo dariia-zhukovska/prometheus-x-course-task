@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import styles from "./SignIn.module.css";
 import avatar from "../../assets/img/avatar.png";
 import { useNavigate } from "react-router-dom";
@@ -9,14 +9,29 @@ export default function SignIn() {
   const [usernameValue, setUsernameValue] = useState("");
   const { setUsername } = useCart();
 
-  const handleUsernameChange = ({ target: { value } }: any) => {
+  useEffect(() => {
+    const username = localStorage.getItem("username");
+    if (username) {
+      navigate("/books");
+    }
+  }, [navigate]);
+
+  const handleUsernameChange = ({
+    target: { value },
+  }: ChangeEvent<HTMLInputElement>) => {
     const newUsername = value;
     setUsernameValue(newUsername);
   };
 
   const handleSignInClick = () => {
     setUsername(usernameValue);
-    navigate("/book-list");
+    navigate("/books");
+  };
+
+  const handleKeyDown = (event: { key: string }) => {
+    if (event.key === "Enter") {
+      handleSignInClick();
+    }
   };
 
   return (
@@ -29,6 +44,7 @@ export default function SignIn() {
         placeholder="Type username"
         value={usernameValue}
         onChange={handleUsernameChange}
+        onKeyDown={handleKeyDown}
       />
       <button
         className={styles.buttonSignIn}
