@@ -40,7 +40,7 @@ export default function FilterNavbar({
       );
     });
     setFilteredBooks(filteredBooks);
-  }, [bookListData, searchTerm, priceFilter]);
+  }, [bookListData, searchTerm, priceFilter, setFilteredBooks]);
 
   const menuOptions = ["All", "0-15", "15-30", "30+"];
 
