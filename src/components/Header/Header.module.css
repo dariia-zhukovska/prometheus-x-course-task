@@ -85,6 +85,11 @@ div {
   color: #f45650;
 }
 
+.cartIcon {
+  display: block;
+  margin: 0;
+}
+
 @media (max-width: 380px) {
   .buttonSignOut {
     padding: 6px 16px;
@@ -95,10 +100,7 @@ div {
     align-items: center;
   }
 
-  .cartIcon {
-    margin: 0;
-    align-self: center;
-  }
+
 }
 
 @media (max-width: 767px) {
