@@ -75,9 +75,26 @@ div {
   gap: 10px;
 }
 
+.headerUsername img {
+  margin: 0;
+}
+
 .headerUsername div {
   font-size: 20px;
   color: #f45650;
+}
+
+@media (max-width: 380px) {
+  .buttonSignOut {
+    padding: 6px 16px;
+  }
+
+  .userNavigation {
+    justify-content: center;
+    align-items: center;
+  }
+
+
 }
 
 @media (max-width: 767px) {

@@ -136,7 +136,7 @@
   transform: scale(1.1);
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 380px) {
   .cartItemInfo {
     flex-wrap: wrap;
     margin: auto;
@@ -159,6 +159,21 @@
   .cartTotal {
     gap: 5%;
   }
+
+  .cartTotalTitle {
+    font-size: 20px;
+  }
+
+  .cartPurchaseButton {
+    padding: 4px 22px;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  .bookItemTotalPrice,
+  .cartTotalPrice {
+    font-size: 1.1rem;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -167,7 +182,7 @@
   }
 
   .cartItemImage {
-    width: 70%;
+    width: 60%;
   }
 
   .bookItemTitle {
@@ -195,6 +210,8 @@
   .cartItemDeleteButton {
     font-size: 14px;
   }
+
+
 }
 
 @media screen and (max-width: 575px) {
