@@ -38,6 +38,7 @@ div {
 
 .headerCart {
   position: relative;
+  margin: 0;
 }
 
 .cartBage {
@@ -48,7 +49,6 @@ div {
   padding: 1px 6px 3px 6px;
   color: white;
   font-size: 10px;
-
   background-color: #f45650;
   border-radius: 50%;
 }
@@ -75,8 +75,9 @@ div {
   gap: 10px;
 }
 
-.headerUsername img {
+.headerCart {
   margin: 0;
+  align-self: center;
 }
 
 .headerUsername div {
@@ -94,7 +95,10 @@ div {
     align-items: center;
   }
 
-
+  .cartIcon {
+    margin: 0;
+    align-self: center;
+  }
 }
 
 @media (max-width: 767px) {

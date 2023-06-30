@@ -9,7 +9,7 @@
 
 @media screen and (max-width: 480px) {
 
-  img {
+  .pageNotFoundImg img {
     width: 80%;
     display: flex;
     margin: auto;
